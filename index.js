@@ -69,10 +69,10 @@ function neighbors(x,y){
     let counter = 0;
     for(let y1=-1; y1<2; y1++){
         for(let x1=-1; x1<2; x1++){
-            if(x + x1 <= 0 || x + x1 > size/scale-1){
+            if(x + x1 < 0 || x + x1 > size/scale-1){
                 continue;
             }
-            if(y + y1 <= 0 || y + y1 > size/scale-1){
+            if(y + y1 < 0 || y + y1 > size/scale-1){
                 continue;
             }
             if(y1 == 0 && x1==0){
