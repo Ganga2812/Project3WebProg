@@ -140,7 +140,6 @@ function rules(num){
         cells = tempCells;
         num--;
         generations++;
-        console.log(generations);
         document.getElementById("generation").style.color = "red";
         document.getElementById("generation").innerHTML = "Generation: " + generations;
     }
