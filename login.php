@@ -34,5 +34,15 @@
     <h2>Anish Ganga: Game logic, html</h2>
     <h2>Saadh Ahmed: Game logic, html</h2>
     <h2>Methodology: We used the Kanban method to help us stay on track with visuals and using feedback loops we improved our project</h2>
+
+    <footer>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <a href="https://jigsaw.w3.org/css-validator/"><img src="valid-css.png" alt="" class='checker'></a>
+        <a href="https://validator.w3.org/"><img src="valid-html.png" alt="" class="checker"></a>
+    </footer>
 </body>
 </html>

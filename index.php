@@ -72,5 +72,15 @@
     <canvas id= "main"></canvas>
 
     <script src="index.js"></script>
+
+    <footer>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <a href="https://jigsaw.w3.org/css-validator/"><img src="valid-css.png" alt="" class='checker'></a>
+        <a href="https://validator.w3.org/"><img src="valid-html.png" alt="" class="checker"></a>
+    </footer>
 </body>
 </html>

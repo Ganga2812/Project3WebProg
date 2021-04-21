@@ -43,3 +43,8 @@ button{
     text-align: center;
     border: 5px outset blue;
 }
+
+img{
+    width: 100px;
+	margin-right: 10px;
+}
