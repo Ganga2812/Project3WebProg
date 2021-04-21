@@ -175,7 +175,7 @@ function clearButton(){
 }
 
 function startButton(){
-    intervalID = setInterval(function() { rules(1); }, 10);
+    intervalID = setInterval(function() { rules(1); }, 50);
 }
 
 function stopButton(){
