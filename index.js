@@ -8,7 +8,7 @@ let cells;
 state();
 startingPix();
 displayCells();
-console.log(neighbors(1,1));
+setInterval(rules, 50);
 
 function state(){
     canvas.width = size;
@@ -47,6 +47,9 @@ function startingPix(){
 
 // We read off of the 'cells' 2d array and fill the cells as black if it's true
 function displayCells(){
+    context.fillStyle = 'white';
+    context.fillRect(0,0, size/scale, size/scale);
+    context.fillStyle = 'black';
     for(let y=0; y<size/scale; y++){
         for(let x=0; x<size/scale; x++){
             if(cells[x][y] == true){
@@ -60,12 +63,24 @@ function rules(){
     let tempCells = storageArrays();
     for(let y=0; y<size/scale; y++){
         for(let x=0; x<size/scale; x++){
-            
+            const neighbors = neighborsCount(x,y);
+            if(cells[x][y] == true && neighbors < 2){
+                tempCells[x][y] = false;
+            }
+            if(cells[x][y] == true && neighbors >= 2 && neighbors <=3){
+                tempCells[x][y] = true;
+            }
+            else if(cells[x][y] == false && neighbors == 3){
+                tempCells[x][y] = true;
+            }
         }
     }
+    cells = tempCells;
+    displayCells();
 }
 
-function neighbors(x,y){
+// get number of neighbors for a cell
+function neighborsCount(x,y){
     let counter = 0;
     for(let y1=-1; y1<2; y1++){
         for(let x1=-1; x1<2; x1++){
