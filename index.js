@@ -8,7 +8,8 @@ let cells;
 state();
 startingPix();
 displayCells();
-setInterval(rules, 50);
+//setInterval(function() { rules(1); }, 100);
+//rules(23);
 
 function state(){
     canvas.width = size;
@@ -38,9 +39,40 @@ function storageArrays(){
 function startingPix(){
     for(let y=0; y<size/scale; y++){
         for(let x=0; x<size/scale; x++){
+            /*
             if(Math.random() < .5){
                 cells[x][y] = true;
             }
+            */
+
+           /*
+            cells[25][25] = true;
+            cells[25][26] = true;
+            cells[26][25] = true;
+            cells[26][26] = true;
+            */
+
+            /*
+            cells[25][25] = true;
+            cells[26][25] = true;
+            cells[27][25] = true;
+            */
+
+            /*
+            cells[25][25] = true;
+            cells[25][26] = true;
+            cells[26][25] = true;
+            cells[27][28] = true;
+            cells[28][27] = true;
+            cells[28][28] = true;
+            */
+
+            cells[50][50] = true;
+            cells[49][52] = true;
+            cells[50][52] = true;
+            cells[51][51] = true;
+            cells[51][52] = true;
+
         }
     }
 }
@@ -59,23 +91,26 @@ function displayCells(){
     }
 }
 
-function rules(){
-    let tempCells = storageArrays();
-    for(let y=0; y<size/scale; y++){
-        for(let x=0; x<size/scale; x++){
-            const neighbors = neighborsCount(x,y);
-            if(cells[x][y] == true && neighbors < 2){
-                tempCells[x][y] = false;
-            }
-            if(cells[x][y] == true && neighbors >= 2 && neighbors <=3){
-                tempCells[x][y] = true;
-            }
-            else if(cells[x][y] == false && neighbors == 3){
-                tempCells[x][y] = true;
+function rules(num){
+    while(num > 0){
+        let tempCells = storageArrays();
+        for(let y=0; y<size/scale; y++){
+            for(let x=0; x<size/scale; x++){
+                const neighbors = neighborsCount(x,y);
+                if(cells[x][y] == true && neighbors < 2){
+                    tempCells[x][y] = false;
+                }
+                if(cells[x][y] == true && neighbors >= 2 && neighbors <=3){
+                    tempCells[x][y] = true;
+                }
+                else if(cells[x][y] == false && neighbors == 3){
+                    tempCells[x][y] = true;
+                }
             }
         }
+        cells = tempCells;
+        num--;
     }
-    cells = tempCells;
     displayCells();
 }
 
