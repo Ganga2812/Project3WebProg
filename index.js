@@ -98,9 +98,9 @@ function startingPix(type){
 
 // We read off of the 'cells' 2d array and fill the cells as black if it's true
 function displayCells(){
-    context.fillStyle = 'white';
+    context.fillStyle = 'lightblue';
     context.fillRect(0,0, size/scale, size/scale);
-    context.fillStyle = 'black';
+    context.fillStyle = 'red';
     for(let y=0; y<size/scale; y++){
         for(let x=0; x<size/scale; x++){
             if(cells[x][y] == true){

@@ -12,7 +12,7 @@
     session_start();
 
     if(isset($_POST['guest'])) {
-        echo '<h2>Welcome Guest</h2>';
+        echo '<h1>Welcome Guest</h1>';
     }
     else{
         if(isset($_POST['username'])){
@@ -39,26 +39,39 @@
         $result = array_search($name, $users, true);
         if($result === false){
             addUser($name);
-            echo '<h2>Welcome new user '. $name . '</h2>';
+            echo '<h1>Welcome new user '. $name . '</h1>';
         }
         else{
-            echo '<h2>Welcome back '. $name . '</h2>';
+            echo '<h1>Welcome back '. $name . '</h1>';
         }
     }
     ?>
     
+    <div class="menu">
+    
     <button onclick="startButton()">Start</button>
     <button onclick="stopButton()">Stop</button>
     <button onclick="randButton()">Random</button>
-    <button onclick="pattern1Button()">Pattern 1(still)</button>
-    <button onclick="pattern2Button()">Pattern 2(osci)</button>
-    <button onclick="pattern3Button()">Pattern 3(osci)</button>
-    <button onclick="pattern4Button()">Pattern 4(glider)</button>
-    <button onclick="increment1Button()">Increment 1</button>
-    <button onclick="increment23Button()">Increment 23</button>
     <button onclick="clearButton()">Clear</button>
+<<<<<<< HEAD
     <label id="generation">Generation: 0</label>
+=======
+
+    <div class="flexBreak"></div>
+    <button onclick="pattern1Button()">Pattern 1 (still)</button>
+    <button onclick="pattern2Button()">Pattern 2 (osci)</button>
+    <button onclick="pattern3Button()">Pattern 3 (osci)</button>
+    <button onclick="pattern4Button()">Pattern 4 (glider)</button>
+    
+    <div class="flexBreak"></div>
+    <button onclick="increment1Button()">Increment x1</button>
+    <button onclick="increment23Button()">Increment x23</button>
+
+    </div>
+
+>>>>>>> e0016a4bd201e669bf84522437e79a24ab11430a
     <canvas id= "main"></canvas>
+
     <script src="index.js"></script>
 </body>
 </html>
