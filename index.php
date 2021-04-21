@@ -48,22 +48,22 @@
     ?>
     
     <div class="menu">
-
-    <div class="flexBreak"></div>
-
+    
     <button onclick="startButton()">Start</button>
     <button onclick="stopButton()">Stop</button>
     <button onclick="randButton()">Random</button>
     <button onclick="clearButton()">Clear</button>
+
     <div class="flexBreak"></div>
     <button onclick="pattern1Button()">Pattern 1 (still)</button>
     <button onclick="pattern2Button()">Pattern 2 (osci)</button>
     <button onclick="pattern3Button()">Pattern 3 (osci)</button>
     <button onclick="pattern4Button()">Pattern 4 (glider)</button>
+    
     <div class="flexBreak"></div>
     <button onclick="increment1Button()">Increment x1</button>
     <button onclick="increment23Button()">Increment x23</button>
-    
+
     </div>
 
     <canvas id= "main"></canvas>
