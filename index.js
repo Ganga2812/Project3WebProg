@@ -2,14 +2,14 @@ const canvas = document.getElementById('main');
 const context = canvas.getContext("2d");
 const size = 500;
 const scale = 5;
+var intervalID;
 
 let cells;
 
 state();
-startingPix();
 displayCells();
-//setInterval(function() { rules(1); }, 100);
 //rules(23);
+
 
 function state(){
     canvas.width = size;
@@ -36,9 +36,42 @@ function storageArrays(){
 
 // We have random starting positions
 // Random cells are set to true aka black color
-function startingPix(){
+function startingPix(type){
     for(let y=0; y<size/scale; y++){
         for(let x=0; x<size/scale; x++){
+
+            switch(type) {
+                case 1:
+                    cells[25][25] = true;
+                    cells[25][26] = true;
+                    cells[26][25] = true;
+                    cells[26][26] = true;
+                    break;
+                case 2:
+                    cells[25][25] = true;
+                    cells[26][25] = true;
+                    cells[27][25] = true;
+                    break;
+                case 3:
+                    cells[25][25] = true;
+                    cells[25][26] = true;
+                    cells[26][25] = true;
+                    cells[27][28] = true;
+                    cells[28][27] = true;
+                    cells[28][28] = true;
+                    break;
+                case 4:
+                    cells[50][50] = true;
+                    cells[49][52] = true;
+                    cells[50][52] = true;
+                    cells[51][51] = true;
+                    cells[51][52] = true;
+                    break;
+                default:
+                    if(Math.random() < .5) {
+                        cells[x][y] = true;
+                    }
+            }
             /*
             if(Math.random() < .5){
                 cells[x][y] = true;
@@ -67,11 +100,11 @@ function startingPix(){
             cells[28][28] = true;
             */
 
-            cells[50][50] = true;
-            cells[49][52] = true;
-            cells[50][52] = true;
-            cells[51][51] = true;
-            cells[51][52] = true;
+            // cells[50][50] = true;
+            // cells[49][52] = true;
+            // cells[50][52] = true;
+            // cells[51][51] = true;
+            // cells[51][52] = true;
 
         }
     }
@@ -134,4 +167,86 @@ function neighborsCount(x,y){
         }
     }
     return counter;
+}
+
+function clearButton(){
+    cells = storageArrays();
+    displayCells();
+}
+
+function startButton(){
+    intervalID = setInterval(function() { rules(1); }, 50);
+}
+
+function stopButton(){
+    clearInterval(intervalID);
+    displayCells();
+}
+
+function randButton(){
+    try{
+        stopButton();
+    } catch(err) {
+    }
+    clearButton();
+    startingPix(7);
+    displayCells();
+}
+
+function pattern1Button(){
+    try{
+        stopButton();
+    } catch(err) {
+    }
+    clearButton();
+    startingPix(1);
+    displayCells();
+}
+
+function pattern2Button(){
+    try{
+        stopButton();
+    } catch(err) {
+    }
+    clearButton();
+    startingPix(2);
+    displayCells();
+}
+
+function pattern3Button(){
+    try{
+        stopButton();
+    } catch(err) {
+    }
+    clearButton();
+    startingPix(3);
+    displayCells();
+}
+
+function pattern4Button(){
+    try{
+        stopButton();
+    } catch(err) {
+
+    }
+    clearButton();
+    startingPix(4);
+    displayCells();
+}
+
+function increment1Button(){
+    try{
+        stopButton();
+    } catch(err) {
+
+    }
+    rules(1);
+}
+function increment23Button(){
+    try{
+        stopButton();
+    } catch(err) {
+
+    }
+    rules(23);
 }
