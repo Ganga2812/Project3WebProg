@@ -8,8 +8,10 @@ let cells;
 state();
 startingPix();
 displayCells();
-//setInterval(function() { rules(1); }, 100);
+setInterval(function() { rules(1); }, 100);
 //rules(23);
+
+clearButton();
 
 function state(){
     canvas.width = size;
@@ -134,4 +136,9 @@ function neighborsCount(x,y){
         }
     }
     return counter;
+}
+
+function clearButton(){
+    cells = storageArrays();
+    displayCells();
 }
