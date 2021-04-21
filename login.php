@@ -26,5 +26,13 @@
             <input type="submit" name="guest" value="Sign in as Guest" />
         </form>
     </div>
+
+    <h2>Leader Name: Saad Mahmood</h2>
+    <h2>Project Name: Conway's Game of Life</h2>
+    <h2>We recreated an interactive website that displays the game of life and some of its patterns</h2>
+    <h2>Saad Mahmood: Styling, login page, html</h2>
+    <h2>Anish Ganga: Game logic, html</h2>
+    <h2>Saadh Ahmed: Game logic, html</h2>
+    <h2>Methodology: We used the Kanban method to help us stay on track with visuals and using feedback loops we improved our project</h2>
 </body>
 </html>
