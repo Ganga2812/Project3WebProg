@@ -2,6 +2,7 @@ const canvas = document.getElementById('main');
 const context = canvas.getContext("2d");
 const size = 500;
 const scale = 5;
+var intervalID;
 
 let cells;
 
@@ -174,7 +175,7 @@ function clearButton(){
 }
 
 function startButton(){
-    var intervalID = setInterval(function() { rules(10); }, 100);
+    intervalID = setInterval(function() { rules(1); }, 10);
 }
 
 function stopButton(){
@@ -186,52 +187,58 @@ function randButton(){
     try{
         stopButton();
     } catch(err) {
-        continue;
     }
+    clearButton();
     startingPix(7);
+    displayCells();
 }
 
 function pattern1Button(){
     try{
         stopButton();
     } catch(err) {
-        continue;
     }
+    clearButton();
     startingPix(1);
+    displayCells();
 }
 
 function pattern2Button(){
     try{
         stopButton();
     } catch(err) {
-        continue;
     }
+    clearButton();
     startingPix(2);
+    displayCells();
 }
 
 function pattern3Button(){
     try{
         stopButton();
     } catch(err) {
-        continue;
     }
+    clearButton();
     startingPix(3);
+    displayCells();
 }
 
 function pattern4Button(){
     try{
         stopButton();
     } catch(err) {
-        continue;
+
     }
+    clearButton();
     startingPix(4);
+    displayCells();
 }
 
 function increment1Button(){
     try{
         stopButton();
     } catch(err) {
-        continue;
+
     }
     rules(1);
 }
@@ -239,7 +246,7 @@ function increment23Button(){
     try{
         stopButton();
     } catch(err) {
-        continue;
+
     }
     rules(23);
 }
