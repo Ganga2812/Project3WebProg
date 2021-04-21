@@ -53,9 +53,8 @@
     <button onclick="stopButton()">Stop</button>
     <button onclick="randButton()">Random</button>
     <button onclick="clearButton()">Clear</button>
-<<<<<<< HEAD
+
     <label id="generation">Generation: 0</label>
-=======
 
     <div class="flexBreak"></div>
     <button onclick="pattern1Button()">Pattern 1 (still)</button>
@@ -69,7 +68,6 @@
 
     </div>
 
->>>>>>> e0016a4bd201e669bf84522437e79a24ab11430a
     <canvas id= "main"></canvas>
 
     <script src="index.js"></script>
