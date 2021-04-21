@@ -57,6 +57,7 @@
     <button onclick="increment1Button()">Increment 1</button>
     <button onclick="increment23Button()">Increment 23</button>
     <button onclick="clearButton()">Clear</button>
+    <label id="generation">Generation: 0</label>
     <canvas id= "main"></canvas>
     <script src="index.js"></script>
 </body>

@@ -3,13 +3,14 @@ const context = canvas.getContext("2d");
 const size = 500;
 const scale = 5;
 var intervalID;
-
+var generations = 0;
 let cells;
 
 state();
 displayCells();
-//rules(23);
 
+
+//rules(23);
 
 function state(){
     canvas.width = size;
@@ -17,6 +18,25 @@ function state(){
     context.scale(scale, scale);
     context.fillStyle = "black";
     cells = storageArrays();
+    canvas.addEventListener('mousedown', function(evt) {
+        var mousePos = getMousePos(canvas, evt);
+        if(cells[Math.floor(mousePos.x/5)][Math.floor(mousePos.y/5)]){
+            cells[Math.floor(mousePos.x/5)][Math.floor(mousePos.y/5)] = false;
+        }
+        else{
+            cells[Math.floor(mousePos.x/5)][Math.floor(mousePos.y/5)] = true;
+        }
+        
+        displayCells();
+      }, false);
+      
+    function getMousePos(canvas, evt) {
+        var rect = canvas.getBoundingClientRect();
+        return {
+          x: evt.clientX - rect.left,
+          y: evt.clientY - rect.top
+        };
+      }
 }
 
 // Helper function
@@ -72,40 +92,6 @@ function startingPix(type){
                         cells[x][y] = true;
                     }
             }
-            /*
-            if(Math.random() < .5){
-                cells[x][y] = true;
-            }
-            */
-
-           /*
-            cells[25][25] = true;
-            cells[25][26] = true;
-            cells[26][25] = true;
-            cells[26][26] = true;
-            */
-
-            /*
-            cells[25][25] = true;
-            cells[26][25] = true;
-            cells[27][25] = true;
-            */
-
-            /*
-            cells[25][25] = true;
-            cells[25][26] = true;
-            cells[26][25] = true;
-            cells[27][28] = true;
-            cells[28][27] = true;
-            cells[28][28] = true;
-            */
-
-            // cells[50][50] = true;
-            // cells[49][52] = true;
-            // cells[50][52] = true;
-            // cells[51][51] = true;
-            // cells[51][52] = true;
-
         }
     }
 }
@@ -122,6 +108,16 @@ function displayCells(){
             }
         }
     }
+}
+
+function changeCell(x,y){
+    if(cells[x][y] == true){
+        cells[x][y] == false;
+    }
+    else{
+        cells[x][y] == true;
+    }
+
 }
 
 function rules(num){
@@ -143,6 +139,10 @@ function rules(num){
         }
         cells = tempCells;
         num--;
+        generations++;
+        console.log(generations);
+        document.getElementById("generation").style.color = "red";
+        document.getElementById("generation").innerHTML = "Generation: " + generations;
     }
     displayCells();
 }
@@ -170,7 +170,14 @@ function neighborsCount(x,y){
 }
 
 function clearButton(){
+    try{
+        stopButton();
+    } catch(err) {
+
+    }
     cells = storageArrays();
+    generations = 0;
+    document.getElementById("generation").innerHTML = "Generation: " + generations;
     displayCells();
 }
 
@@ -190,6 +197,8 @@ function randButton(){
     }
     clearButton();
     startingPix(7);
+    generations = 0;
+    document.getElementById("generation").innerHTML = "Generation: " + generations;
     displayCells();
 }
 
@@ -200,6 +209,8 @@ function pattern1Button(){
     }
     clearButton();
     startingPix(1);
+    generations = 0;
+    document.getElementById("generation").innerHTML = "Generation: " + generations;
     displayCells();
 }
 
@@ -210,6 +221,8 @@ function pattern2Button(){
     }
     clearButton();
     startingPix(2);
+    generations = 0;
+    document.getElementById("generation").innerHTML = "Generation: " + generations;
     displayCells();
 }
 
@@ -220,6 +233,8 @@ function pattern3Button(){
     }
     clearButton();
     startingPix(3);
+    generations = 0;
+    document.getElementById("generation").innerHTML = "Generation: " + generations;
     displayCells();
 }
 
@@ -231,6 +246,8 @@ function pattern4Button(){
     }
     clearButton();
     startingPix(4);
+    generations = 0;
+    document.getElementById("generation").innerHTML = "Generation: " + generations;
     displayCells();
 }
 
