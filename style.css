@@ -1,5 +1,4 @@
 body{
-    margin:0;
     background: rgb(182, 182, 182);
 }
 canvas {
@@ -10,6 +9,9 @@ canvas {
     width: 35%;
 }
 h1{
+    text-align: center;
+}
+h2{
     text-align: center;
 }
 .menu{
@@ -35,4 +37,10 @@ button{
     margin-right: 5px;
     width: 90px;
     height: 40px;
+}
+.login{
+    background-color: rgb(136, 205, 223);
+    padding-bottom: 20px;
+    text-align: center;
+    border: 5px outset blue;
 }
