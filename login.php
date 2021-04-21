@@ -18,7 +18,7 @@
     <h1>GAME OF LIFE</h1>
     
     <div class="login">
-        <form id="Login" action="index.html" method="POST">
+        <form id="Login" action="index.php" method="POST">
             <label for="username"><h3>Enter your Username</h3></label>
             <input type="text" name="username" placeholder="Username"/>
             <br><br>
