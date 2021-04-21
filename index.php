@@ -54,7 +54,6 @@
     <button onclick="randButton()">Random</button>
     <button onclick="clearButton()">Clear</button>
 
-    <label id="generation">Generation: 0</label>
 
     <div class="flexBreak"></div>
     <button onclick="pattern1Button()">Pattern 1 (still)</button>
@@ -66,6 +65,8 @@
     <button onclick="increment1Button()">Increment x1</button>
     <button onclick="increment23Button()">Increment x23</button>
 
+    <div class="flexBreak"></div>
+    <label id="generation">Generation: 0</label>
     </div>
 
     <canvas id= "main"></canvas>
